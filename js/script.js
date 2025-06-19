@@ -8,10 +8,12 @@ console.log("GitHub Pages에서 실행되는 JS 파일입니다.");
         if (entry.isIntersecting) {//관찰 대상이 현재 루트 안에 포함되어 있는지의 여부
           // 화면에 들어옴
           entry.target.classList.add("fade-in");
-        } else {
-          // 화면에서 나감
-          entry.target.classList.remove("fade-in");
-        }
+        } 
+        // 한번 나타나면 사라지지 않음.
+        // else {
+        //   // 화면에서 나감
+        //   entry.target.classList.remove("fade-in");
+        // }
       });
     },
     // 화면에서 해당 요소가 10% 이상 보일 경우 화면에 들어온 것으로 판단함
