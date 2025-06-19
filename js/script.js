@@ -92,12 +92,12 @@ let touchstartY = 0;
 /* Mobile warp - touchstart */
 window.addEventListener('touchstart', (e)=>{
   e.stopPropagation();
-  ts = e.originalEvent.touches[0].clientY;
-  console.log('touchstart :ts: ' + ts);
+  touchstartY = e.originalEvent.touches[0].clientY;
+  console.log('touchstart :touchstartY: ' + touchstartY);
 },{passive:false});
 
 window.addEventListener('pointerdown', (e)=>{
-  ts=e.clientY;
+  touchstartY=e.clientY;
   console.log('pointerdown :ts: ' + ts);
 },{passive:false}); 
 
