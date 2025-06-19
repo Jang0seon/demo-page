@@ -70,7 +70,7 @@ const lastPage = container.length - 1; // 마지막 페이지
     }
     wrap.style.top = page * -100 + 'vh';
     lastScrollY = scrollY;
-},{passive:false}); // 디폴트 기능 제거 - 스크롤*/
+},{passive:true}); // 디폴트 기능 제거 - 스크롤*/
 
 window.addEventListener('wheel',(e)=>{
     e.preventDefault();
@@ -88,13 +88,27 @@ window.addEventListener('wheel',(e)=>{
     wrap.style.top = page * -100 + 'vh';
 },{passive:false}); // 디폴트 기능 제거 - 스크롤
 
+let touchstartY = 0;
+/* Mobile warp - touchstart */
+window.addEventListener('touchstart', (e)=>{
+  e.stopPropagation();
+  ts = e.originalEvent.touches[0].clientY;
+  console.log('touchstart :ts: ' + ts);
+},{passive:false});
+
+window.addEventListener('pointerdown', (e)=>{
+  ts=e.clientY;
+  console.log('pointerdown :ts: ' + ts);
+},{passive:false}); 
+
 /* Mobile warp - android*/
 window.addEventListener('touchmove', (e)=>{
-    e.preventDefault();
-  console.log('touchmove' + e.deltaY);
-    if(e.deltaY > 0){
+  e.preventDefault();
+  const deltaY = touchstartY - e.clientY;
+  console.log('touchmove : deltaY : ' + deltaY);
+    if(deltaY > 0){
         page++;
-    }else if(e.deltaY < 0){
+    }else if(deltaY < 0){
         page--;
     }
     if(page < 0){
@@ -102,24 +116,7 @@ window.addEventListener('touchmove', (e)=>{
     }else if(page > lastPage){
         page = lastPage;
     }
-    console.log(e.deltaY)
     wrap.style.top = page * -100 + 'vh';
 },{passive:false}); // 디폴트 기능 제거 - 스크롤
 
-/* Mobile warp - ios */
-window.addEventListener('pointerdown', (e)=>{
-    e.preventDefault();
-  console.log('pointerdown' + e.deltaY);
-    if(e.deltaY > 0){
-        page++;
-    }else if(e.deltaY < 0){
-        page--;
-    }
-    if(page < 0){
-        page=0;
-    }else if(page > lastPage){
-        page = lastPage;
-    }
-    console.log(e.deltaY)
-    wrap.style.top = page * -100 + 'vh';
-},{passive:false}); // 디폴트 기능 제거 - 스크롤
+
