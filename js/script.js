@@ -105,6 +105,8 @@ window.addEventListener('pointerdown', (e)=>{
 window.addEventListener('touchmove', (e)=>{
   e.preventDefault();
   const deltaY = touchstartY - e.clientY;
+  console.log('touchmove : e.changedTouches : '+e.changedTouches);
+  console.log('touchmove : e.touches : '+e.touches);
   console.log('touchmove : deltaY : ' + deltaY);
     if(deltaY > 0){
         page++;
