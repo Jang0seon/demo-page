@@ -26,7 +26,7 @@ console.log("GitHub Pages에서 실행되는 JS 파일입니다.");
     observer.observe(element);
   });
 
-/* 모바일 진동 */
+/* 모바일 진동 - 최근 폰엔 사용이 안되는 듯 싶다..?
 navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate; // 작동되는 진동 메소드가 다르므로 통합
 function vibrate() {
   if (navigator.vibrate) {
@@ -46,3 +46,4 @@ function vibratearray() {
 function stop() {
   navigator.vibrate(0); // (0) 대신에 ([]) 을 넣어도 동일하다.
 }
+*/
