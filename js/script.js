@@ -72,7 +72,7 @@ window.addEventListener('scroll',(e)=>{
     lastScrollY = scrollY;
 },{passive:false}); // 디폴트 기능 제거 - 스크롤
 
-window.addEventListener('wheel',(e)=>{
+/*window.addEventListener('wheel',(e)=>{
     e.preventDefault();
     if(e.deltaY > 0){
         page++;
@@ -86,9 +86,9 @@ window.addEventListener('wheel',(e)=>{
     }
     console.log(e.deltaY)
     wrap.style.top = page * -100 + 'vh';
-},{passive:false}); // 디폴트 기능 제거 - 스크롤
+},{passive:false}); // 디폴트 기능 제거 - 스크롤*/
 
-/* Mobile warp - android*/
+/* Mobile warp - android
 window.addEventListener('touchmove', (e)=>{
     e.preventDefault();
     if(e.deltaY > 0){
@@ -103,9 +103,9 @@ window.addEventListener('touchmove', (e)=>{
     }
     console.log(e.deltaY)
     wrap.style.top = page * -100 + 'vh';
-},{passive:false}); // 디폴트 기능 제거 - 스크롤
+},{passive:false}); // 디폴트 기능 제거 - 스크롤*/
 
-/* Mobile warp - ios*/
+/* Mobile warp - ios
 window.addEventListener('pointerdown', (e)=>{
     e.preventDefault();
     if(e.deltaY > 0){
@@ -120,4 +120,4 @@ window.addEventListener('pointerdown', (e)=>{
     }
     console.log(e.deltaY)
     wrap.style.top = page * -100 + 'vh';
-},{passive:false}); // 디폴트 기능 제거 - 스크롤
+},{passive:false}); // 디폴트 기능 제거 - 스크롤*/
