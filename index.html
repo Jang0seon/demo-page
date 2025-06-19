@@ -41,20 +41,15 @@
                     </div>
                 </div>
                 <div class="container3">
-                    <button type="button"
-                              onclick="navigator.vibrate(2000)">
+                    <button type="button" onclick="vibrate()">
                       Basic Vibrate
                     </button>
                     <button
-                      type="button"
-                      ontouchstart="navigator.vibrate(1000)"
-                      ontouchend="navigator.vibrate(1000)">
-                      Mouse Down / Up
+                      type="button" onclick="vibratearray()">
+                      vibratearray
                     </button>
                     <button
-                      type="button"
-                      ontouchstart="window.timer = setTimeout(() => navigator.vibrate(50), 500)"
-                      ontouchend="clearTimeout(window.timer)">
+                      type="button" onclick="stop()">
                       Long Press
                     </button>
                 </div>
