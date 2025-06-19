@@ -27,9 +27,8 @@ console.log("GitHub Pages에서 실행되는 JS 파일입니다.");
   });
 
 /* 모바일 진동 */
-
+navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate; // 작동되는 진동 메소드가 다르므로 통합
 function vibrate() {
-  navigator.vibrate = navigator.vibrate | | navigator.webkitVibrate | | navigator.mozVibrate | | navigator.msVibrate; // 작동되는 진동 메소드가 다르므로 통합
   if (navigator.vibrate) {
     navigator.vibrate(20000); // 진동을 울리게 한다. 1000ms = 1s 이다.
   } else {
@@ -38,7 +37,6 @@ function vibrate() {
 }
  
 function vibratearray() {
-  navigator.vibrate = navigator.vibrate | | navigator.webkitVibrate | | navigator.mozVibrate | | navigator.msVibrate; // 작동되는 진동 메소드가 다르므로 통합
   if (navigator.vibrate) {
     navigator.vibrate([100,30,100,30,100,200,200,30,200,30,200,200,100,30,100,30,100]); // 배열로도 가능하다. 진동은 SOS 모스부호
   } else {
@@ -46,6 +44,5 @@ function vibratearray() {
   }
 }
 function stop() {
-  navigator.vibrate = navigator.vibrate | | navigator.webkitVibrate | | navigator.mozVibrate | | navigator.msVibrate; // 작동되는 진동 메소드가 다르므로 통합
   navigator.vibrate(0); // (0) 대신에 ([]) 을 넣어도 동일하다.
 }
