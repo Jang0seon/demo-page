@@ -12,13 +12,15 @@
         <header id="header">
             <div class="container"><h1>안녕하세요! 🐿️</h1></div>
         </header>
-        <nav id="nav">
+<!--         <nav id="nav">
             <div class="container"></div>
-        </nav>
+        </nav> -->
         <main id="main">
-            <div class="container">
-                <div class="container1"></div>
-                <div class="container2">
+            <div class="container wrap">
+                <div class="container1">
+<!--                     <img src="image/main1.jpg" alt="날짜풍선을_들고있는_커플"> -->
+                </div>
+                <div class="container page_2">
                     <div class="fade-wrap">
                     	<h2>첫 번째 섹션</h2>
                     	<img src="image/test.png" alt="img" style="height: 160px;width: 240px;">
