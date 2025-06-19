@@ -104,9 +104,8 @@ window.addEventListener('pointerdown', (e)=>{
 /* Mobile warp - android*/
 window.addEventListener('touchmove', (e)=>{
   e.preventDefault();
-  const deltaY = touchstartY - e.clientY;
-  console.log('touchmove : e.changedTouches : '+e.changedTouches);
-  console.log('touchmove : e.touches : '+e.touches);
+  const deltaY = touchstartY - e.changedTouches[0].clientY;
+  console.log('touchmove : e.changedTouches[0].clientY : '+e.changedTouches[0].clientY);
   console.log('touchmove : deltaY : ' + deltaY);
     if(deltaY > 0){
         page++;
