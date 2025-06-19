@@ -4,130 +4,151 @@ body {
   background-color: #f3f3f3;
 }
 
-/**/
 * {
-		margin: 0;
-		padding: 0;
+	margin: 0;
+	padding: 0;
 }
 #header {
-		width: 100%;
-		height: 100px;
-		background-color: #EEEBE9;
+	width: 100%;
+	height: 100px;
+	background-color: #EEEBE9;
 }
 #nav {
-		width: 100%;
-		height: 100px;
-		background-color: #B9AAA5;
+	width: 100%;
+	height: 100px;
+	background-color: #B9AAA5;
 }
 #main {
-		width: 100%;
-		height: 780px;
-		background-color: #886F65;
+	width: 100%;
+	height: 780px;
+	background-color: #886F65;
 }
 #footer {
-		width: 100%;
-		height: 100px;
-		background-color: #4E342E;
+	width: 100%;
+	height: 100px;
+	background-color: #4E342E;
 }
 .container {
-		margin: 0 auto;
-		width: 1200px;
-		height: inherit;
-		background-color: rgba(0, 0, 0, 0.2);
+	margin: 0 auto;
+	width: 1200px;
+	height: inherit;
+	background-color: rgba(0, 0, 0, 0.2);
 }
 .container1 {
-		width: 100%;
-		height: 100px;
-		background-color: #74574A;
+	width: 100%;
+	height: 100px;
+	background-color: #74574A;
 }
 .container2 {
-		width: 100%;
-		height: 200px;
-		background-color: #684D43;
+	width: 100%;
+	height: 200px;
+	background-color: #684D43;
 }
 .container3 {
-		width: 50%;
-		height: 480px;
-		background-color: #594139;
-		float: left;
+	width: 50%;
+	height: 480px;
+	background-color: #594139;
+	float: left;
 }
 .container4 {
-		width: 50%;
-		height: 480px;
-		background-color: #4A352F;
-		float: left;
+	width: 50%;
+	height: 480px;
+	background-color: #4A352F;
+	float: left;
 }
 
 @media (max-width: 1220px){
 	.container {
-			width: 96%;
+		width: 96%;
 	}
 	.container1 {
-			width: 30%;
-			height: 780px;
-			float: left;
+		width: 30%;
+		height: 780px;
+		float: left;
 	}
 	.container2 {
-			width: 70%;
-			height: 390px;
-			float: left;
+		width: 70%;
+		height: 390px;
+		float: left;
 	}
 	.container3 {
-			width: 35%;
-			height: 390px;
-			float: left;
+		width: 35%;
+		height: 390px;
+		float: left;
 	}
 	.container4 {
-			width: 35%;
-			height: 390px;
-			float: left;
+		width: 35%;
+		height: 390px;
+		float: left;
 	}
 }
 
 @media (max-width: 768px){
 	.container {
-			width: 100%;
+		width: 100%;
 	}
 	.container1 {
-			width: 40%;
-			height: 780px;
-			float: left;
+		width: 40%;
+		height: 780px;
+		float: left;
 	}
 	.container2 {
-			width: 60%;
-			height: 260px;
-			float: left;
+		width: 60%;
+		height: 260px;
+		float: left;
 	}
 	.container3 {
-			width: 60%;
-			height: 260px;
-			float: left;
-	}
+		width: 60%;
+		height: 260px;
+		float: left;
+}
 	.container4 {
-			width: 60%;
-			height: 260px;
-			float: left;
+		width: 60%;
+		height: 260px;
+		float: left;
 	}
 }
 
 @media (max-width: 480px){
 	.container {
-			width: 100%;
+		width: 100%;
 	}
 	.container1 {
-			width: 100%;
-			height: 150px;
+		width: 100%;
+		height: 150px;
 	}
 	.container2 {
-			width: 100%;
-			height: 210px;
+		width: 100%;
+		height: 210px;
 	}
 	.container3 {
-			width: 100%;
-			height: 210px;
+		width: 100%;
+		height: 210px;
 	}
 	.container4 {
-			width: 100%;
-			height: 210px;
+		width: 100%;
+		height: 210px;
 	}
+}
+
+/* 스트롤시 fade-in, fade-out */
+.fade-wrap {
+	/* 나타나는 효과가 1초동안 발생 */
+	transition: 1s;
+
+	/* 투명도 0 (안보임) */
+	opacity: 0;
+
+	/* 왼쪽에서 오른쪽으로 나타나게 하기 위함 */
+	position: relative;
+	left: -50px;
+
+	margin-bottom: 20px;
+}
+.fade-wrap.fade-in {
+	/* 투명도 0 (보임) */
+	opacity: 1;
+
+	/* 왼쪽에서 오른쪽으로 나타나게 하기 위함 */
+	left: 0;
 }
