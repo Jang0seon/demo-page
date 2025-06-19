@@ -102,8 +102,8 @@ window.addEventListener('pointerdown', (e)=>{
 },{passive:false}); 
 
 /* Mobile warp - android*/
-window.addEventListener('touchmove', (e)=>{
-  e.preventDefault();
+window.addEventListener('touchend', (e)=>{
+  e.stopPropagation();
   const deltaY = touchstartY - e.changedTouches[0].clientY;
   console.log('touchmove : e.changedTouches[0].clientY : '+e.changedTouches[0].clientY);
   console.log('touchmove : deltaY : ' + deltaY);
