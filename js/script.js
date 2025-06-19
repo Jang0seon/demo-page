@@ -54,7 +54,7 @@ const container = document.getElementsByClassName('container');
 let page = 0; // 영역 포지션 초기값
 const lastPage = container.length - 1; // 마지막 페이지
 
-window.addEventListener('scroll',(e)=>{
+/*window.addEventListener('scroll',(e)=>{
     const scrollY = window.scrollY;
     const deltaY = scrollY - lastScrollY;
     
@@ -70,27 +70,28 @@ window.addEventListener('scroll',(e)=>{
     }
     wrap.style.top = page * -100 + 'vh';
     lastScrollY = scrollY;
+},{passive:false}); // 디폴트 기능 제거 - 스크롤*/
+
+window.addEventListener('wheel',(e)=>{
+    e.preventDefault();
+    if(e.deltaY > 0){
+        page++;
+    }else if(e.deltaY < 0){
+        page--;
+    }
+    if(page < 0){
+        page=0;
+    }else if(page > lastPage){
+        page = lastPage;
+    }
+    console.log(e.deltaY)
+    wrap.style.top = page * -100 + 'vh';
 },{passive:false}); // 디폴트 기능 제거 - 스크롤
 
-/*window.addEventListener('wheel',(e)=>{
-    e.preventDefault();
-    if(e.deltaY > 0){
-        page++;
-    }else if(e.deltaY < 0){
-        page--;
-    }
-    if(page < 0){
-        page=0;
-    }else if(page > lastPage){
-        page = lastPage;
-    }
-    console.log(e.deltaY)
-    wrap.style.top = page * -100 + 'vh';
-},{passive:false}); // 디폴트 기능 제거 - 스크롤*/
-
-/* Mobile warp - android
+/* Mobile warp - android*/
 window.addEventListener('touchmove', (e)=>{
     e.preventDefault();
+  console.log('touchmove' + e.deltaY);
     if(e.deltaY > 0){
         page++;
     }else if(e.deltaY < 0){
@@ -103,11 +104,12 @@ window.addEventListener('touchmove', (e)=>{
     }
     console.log(e.deltaY)
     wrap.style.top = page * -100 + 'vh';
-},{passive:false}); // 디폴트 기능 제거 - 스크롤*/
+},{passive:false}); // 디폴트 기능 제거 - 스크롤
 
-/* Mobile warp - ios
+/* Mobile warp - ios */
 window.addEventListener('pointerdown', (e)=>{
     e.preventDefault();
+  console.log('pointerdown' + e.deltaY);
     if(e.deltaY > 0){
         page++;
     }else if(e.deltaY < 0){
@@ -120,4 +122,4 @@ window.addEventListener('pointerdown', (e)=>{
     }
     console.log(e.deltaY)
     wrap.style.top = page * -100 + 'vh';
-},{passive:false}); // 디폴트 기능 제거 - 스크롤*/
+},{passive:false}); // 디폴트 기능 제거 - 스크롤
