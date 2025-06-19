@@ -41,22 +41,22 @@
                     </div>
                 </div>
                 <div class="container3">
+                    <button type="button"
+                              onclick="navigator.vibrate(200)">
+                      Basic Vibrate
+                    </button>
+                    <button
                       type="button"
-  onclick="navigator.vibrate(200)">
-  Basic Vibrate
-</button>
-<button
-  type="button"
-  ontouchstart="navigator.vibrate(100)"
-  ontouchend="navigator.vibrate(100)">
-  Mouse Down / Up
-</button>
-<button
-  type="button"
-  ontouchstart="window.timer = setTimeout(() => navigator.vibrate(50), 500)"
-  ontouchend="clearTimeout(window.timer)">
-  Long Press
-</button>
+                      ontouchstart="navigator.vibrate(100)"
+                      ontouchend="navigator.vibrate(100)">
+                      Mouse Down / Up
+                    </button>
+                    <button
+                      type="button"
+                      ontouchstart="window.timer = setTimeout(() => navigator.vibrate(50), 500)"
+                      ontouchend="clearTimeout(window.timer)">
+                      Long Press
+                    </button>
                 </div>
                 <div class="container4"></div>
             </div>
