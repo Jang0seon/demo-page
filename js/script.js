@@ -98,7 +98,7 @@ window.addEventListener('touchstart', (e)=>{
 
 window.addEventListener('pointerdown', (e)=>{
   e.stopPropagation();
-  touchstartY = e.originalEvent.touches[0].clientY;
+  touchstartY = e.height;
 },{passive:false}); 
 
 /* Mobile warp - android*/
