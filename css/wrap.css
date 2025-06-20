@@ -6,7 +6,7 @@ body {
     margin:0;
     border:0;
     padding:0;
-    overflow: hidden;
+/*     overflow: hidden; */
 }
 .wrap {
     position:relative;
@@ -17,7 +17,8 @@ body {
 }
 .container {
     width:100%;
-    height:100%;
+/*     height:100%; */
+    height: var(--app-height);
 }
 .container:nth-child(1){background-color: green;}
 .container:nth-child(2){background-color: orange;}
