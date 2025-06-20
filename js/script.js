@@ -87,7 +87,7 @@ window.addEventListener('touchstart', (e)=>{
   touchstartY = e.touches[0].clientY;
   console.log('touchstart :touchstartY: ' + touchstartY);
 },{passive:false});
-element.addEventListener('touchmove', (event) => {
+element.addEventListener('touchmove', (e) => {
   // 터치 이동 시 탭 동작 취소
   touchStartTime = null;
 });
@@ -96,6 +96,7 @@ document.addEventListener('touchend', (e)=>{
   const deltaY = touchstartY - e.changedTouches[0].clientY;
   console.log('touchend : e.changedTouches[0].clientY : ' + e.changedTouches[0].clientY);
   if(touchStartTime){  
+    console.log('touchStartTime::'+touchStartTime);
     const touchEndTime = Date.now();
     const timeTaken = touchEndTime - touchStartTime;
     if (timeTaken < 250) {
