@@ -97,11 +97,11 @@ document.addEventListener('touchend', (e)=>{
   console.log('touchend : e.changedTouches[0].clientY : ' + e.changedTouches[0].clientY);
   if(touchStartTime){  
     console.log('touchStartTime::'+touchStartTime);
-    const touchEndTime = Date.now();
-    const timeTaken = touchEndTime - touchStartTime;
-    if (timeTaken < 250) {
+    // const touchEndTime = Date.now();
+    // const timeTaken = touchEndTime - touchStartTime;
+    // if (timeTaken < 250) {
       e.target.click() 
-    }
+    // }
   } else {
       if(deltaY > 0){
         page++;
