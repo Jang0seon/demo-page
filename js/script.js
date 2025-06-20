@@ -102,7 +102,7 @@ document.addEventListener('touchend', (e)=>{
     }else if(page > lastPage){
         page = lastPage;
     }
-    wrap.style.top = page * -100 + 'vh';
+    wrap.style.top = page * -100 + '%';
 },{passive:false}); // 디폴트 기능 제거 - 스크롤
 
 
