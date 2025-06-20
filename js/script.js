@@ -72,7 +72,7 @@ const lastPage = container.length - 1; // 마지막 페이지
     lastScrollY = scrollY;
 },{passive:true}); // 디폴트 기능 제거 - 스크롤*/
 
-window.addEventListener('wheel',(e)=>{
+document.addEventListener('wheel',(e)=>{
     e.preventDefault();
     if(e.deltaY > 0){
         page++;
@@ -110,7 +110,7 @@ window.addEventListener('touchstart', (e)=>{
 // },{passive:false}); 
 
 /* Mobile warp - android*/
-window.addEventListener('touchend', (e)=>{
+document.addEventListener('touchend', (e)=>{
   e.stopPropagation();
   const deltaY = touchstartY - e.changedTouches[0].clientY;
   console.log('touchend : e.changedTouches[0].clientY : ' + e.changedTouches[0].clientY);
