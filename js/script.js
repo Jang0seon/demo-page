@@ -50,10 +50,10 @@ function stop() {
 
 
 /* warp */
-// window.addEventListener("DOMContentLoaded", function (ev) {
-//   const { innerHeight } = window;
-//   document.documentElement.style.setProperty("--app-height",`${innerHeight}px`);
-// });
+window.addEventListener("DOMContentLoaded", function (ev) {
+  const { innerHeight } = window;
+  document.documentElement.style.setProperty("--app-height",`${innerHeight}px`);
+});
 
 // const wrap = document.getElementsByClassName('wrap')[0]; // 보일 영역
 // const container = document.getElementsByClassName('container');
