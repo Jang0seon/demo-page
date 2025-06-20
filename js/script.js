@@ -93,7 +93,7 @@ let touchstartY = 0;
 window.addEventListener('touchstart', (e)=>{
   e.preventDefault();
   e.stopPropagation();
-  touchstartY = e.originalEvent.touches[0].clientY;
+  touchstartY = e.touches[0].clientY;
   console.log('touchstart :touchstartY: ' + touchstartY);
 },{passive:false});
 
