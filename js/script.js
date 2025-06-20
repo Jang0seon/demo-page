@@ -92,7 +92,7 @@ document.addEventListener('touchmove', (e) => {
   touchStartTime = null;
 });
 document.addEventListener('touchend', (e)=>{
-  e.stopPropagation();
+  //e.stopPropagation();
   const deltaY = touchstartY - e.changedTouches[0].clientY;
   console.log('touchend : e.changedTouches[0].clientY : ' + e.changedTouches[0].clientY);
   if(touchStartTime){  
