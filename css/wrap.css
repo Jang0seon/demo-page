@@ -47,6 +47,10 @@ details > summary::-webkit-details-marker {
     transform: rotate3d(0, 0, 1, 90deg);
     transition: transform 4s;
 }
+iframe {
+    width:640px;
+    height: var(--app-height);
+}
 
 /* 클릭시효과 */
 details[open] > summary::-webkit-details-marker {
