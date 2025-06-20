@@ -73,7 +73,7 @@ document.addEventListener('wheel',(e)=>{
         page = lastPage;
     }
     console.log(e.deltaY)
-    wrap.style.top = page * -100 + 'vh';
+    wrap.style.top = page * -100 + '%';
 },{passive:false}); // 디폴트 기능 제거 - 스크롤
 
 let touchstartY = 0;
