@@ -80,14 +80,14 @@ let touchstartY = 0;
 
 /* Mobile warp - touchstart */
 let touchStartTime;
-window.addEventListener('touchstart', (e)=>{
+document.addEventListener('touchstart', (e)=>{
   // e.preventDefault();
   // e.stopPropagation();
   touchStartTime = Date.now();
   touchstartY = e.touches[0].clientY;
   console.log('touchstart :touchstartY: ' + touchstartY);
 },{passive:false});
-element.addEventListener('touchmove', (e) => {
+document.addEventListener('touchmove', (e) => {
   // 터치 이동 시 탭 동작 취소
   touchStartTime = null;
 });
