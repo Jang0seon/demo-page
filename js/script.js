@@ -96,9 +96,16 @@ window.addEventListener('touchstart', (e)=>{
   console.log('touchstart :touchstartY: ' + touchstartY);
 },{passive:false});
 
+window.addEventListener('pointerup', (e)=>{
+  e.stopPropagation();
+  touchstartY = e.height;
+  console.log('pointerup :touchstartY: ' + touchstartY);
+},{passive:false}); 
+
 window.addEventListener('pointerdown', (e)=>{
   e.stopPropagation();
   touchstartY = e.height;
+  console.log('pointerdown :touchstartY: ' + touchstartY);
 },{passive:false}); 
 
 /* Mobile warp - android*/
