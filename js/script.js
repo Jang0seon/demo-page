@@ -91,6 +91,7 @@ window.addEventListener('wheel',(e)=>{
 let touchstartY = 0;
 /* Mobile warp - touchstart */
 window.addEventListener('touchstart', (e)=>{
+  e.preventDefault()
   e.stopPropagation();
   touchstartY = e.originalEvent.touches[0].clientY;
   console.log('touchstart :touchstartY: ' + touchstartY);
