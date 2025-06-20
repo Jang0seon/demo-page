@@ -11,11 +11,14 @@ body {
 .wrap {
     position:relative;
     top:0;
-    width:100%;height:100%;
+    width:100%;
+    height:100%;
     transition: 0.5s;
 }
 .container {
-    width:100%;height:100%;
+    width:100%;
+/*     height:100%; */
+    height:-webkit-fill-available';
 }
 .container:nth-child(1){background-color: green;}
 .container:nth-child(2){background-color: orange;}
