@@ -68,8 +68,7 @@ const lastPage = container.length - 1; // 마지막 페이지
     }else if(page > lastPage){
         page = lastPage;
     }
-    wrap.style.top = page * -100 + 'vh';
-    lastScrollY = scrollY;
+    wrap.style.top = page * -100 + '%';
 },{passive:true}); // 디폴트 기능 제거 - 스크롤*/
 
 document.addEventListener('wheel',(e)=>{
