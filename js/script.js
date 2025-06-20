@@ -80,8 +80,8 @@ let touchstartY = 0;
 
 /* Mobile warp - touchstart */
 window.addEventListener('touchstart', (e)=>{
-  e.preventDefault();
-  e.stopPropagation();
+  // e.preventDefault();
+  // e.stopPropagation();
   touchstartY = e.touches[0].clientY;
   console.log('touchstart :touchstartY: ' + touchstartY);
 },{passive:false});
@@ -90,12 +90,12 @@ document.addEventListener('touchend', (e)=>{
   e.stopPropagation();
   const deltaY = touchstartY - e.changedTouches[0].clientY;
   console.log('touchend : e.changedTouches[0].clientY : ' + e.changedTouches[0].clientY);
-  // console.log('touchmove : e.changedTouches[0].clientY : '+e.changedTouches[0].clientY);
-  // console.log('touchmove : deltaY : ' + deltaY);
-    if(deltaY > 0){
+    if(deltaY > 5){
         page++;
-    }else if(deltaY < 0){
+    } else if(deltaY < -5){
         page--;
+    } else {
+      e.target.click()
     }
     if(page < 0){
         page=0;
