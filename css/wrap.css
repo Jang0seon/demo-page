@@ -54,3 +54,9 @@ details[open] > summary::-webkit-details-marker {
 details[open] > summary {
     background: pink;
 }
+
+@media only screen and (min-width: 700px) {
+  iframe {
+    width:100%;
+  }
+}
