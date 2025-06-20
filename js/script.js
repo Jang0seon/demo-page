@@ -48,28 +48,17 @@ function stop() {
 }
 */
 
-/* PC warp */
+
+/* warp */
+window.addEventListener("DOMContentLoaded", function (ev) {
+  const { innerHeight } = window;
+  document.documentElement.style.setProperty("--app-height",`${innerHeight}px`);
+});
+
 const wrap = document.getElementsByClassName('wrap')[0]; // 보일 영역
 const container = document.getElementsByClassName('container');
 let page = 0; // 영역 포지션 초기값
 const lastPage = container.length - 1; // 마지막 페이지
-
-/*window.addEventListener('scroll',(e)=>{
-    const scrollY = window.scrollY;
-    const deltaY = scrollY - lastScrollY;
-    
-    if(deltaY > 0){
-        page++;
-    }else if(deltaY < 0){
-        page--;
-    }
-    if(page < 0){
-        page=0;
-    }else if(page > lastPage){
-        page = lastPage;
-    }
-    wrap.style.top = page * -100 + '%';
-},{passive:true}); // 디폴트 기능 제거 - 스크롤*/
 
 document.addEventListener('wheel',(e)=>{
     e.preventDefault();
@@ -88,6 +77,7 @@ document.addEventListener('wheel',(e)=>{
 },{passive:false}); // 디폴트 기능 제거 - 스크롤
 
 let touchstartY = 0;
+
 /* Mobile warp - touchstart */
 window.addEventListener('touchstart', (e)=>{
   e.preventDefault();
@@ -96,19 +86,6 @@ window.addEventListener('touchstart', (e)=>{
   console.log('touchstart :touchstartY: ' + touchstartY);
 },{passive:false});
 
-// window.addEventListener('pointerup', (e)=>{
-//   e.stopPropagation();
-//   touchstartY = e.height;
-//   console.log('pointerup :touchstartY: ' + touchstartY);
-// },{passive:false}); 
-
-// window.addEventListener('pointerdown', (e)=>{
-//   e.stopPropagation();
-//   touchstartY = e.height;
-//   console.log('pointerdown :touchstartY: ' + touchstartY);
-// },{passive:false}); 
-
-/* Mobile warp - android*/
 document.addEventListener('touchend', (e)=>{
   e.stopPropagation();
   const deltaY = touchstartY - e.changedTouches[0].clientY;
