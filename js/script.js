@@ -52,7 +52,7 @@ function stop() {
 /* warp */
 window.addEventListener("DOMContentLoaded", function (ev) {
   const { innerHeight } = window;
-  document.documentElement.style.setProperty("--app-height",`${innerHeight}px`);
+  document.documentElement.style.setProperty("--app-height",`${innerHeight}`);
 });
 
 // const wrap = document.getElementsByClassName('wrap')[0]; // 보일 영역
