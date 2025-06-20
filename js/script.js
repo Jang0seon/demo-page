@@ -99,7 +99,7 @@ document.addEventListener('touchend', (e)=>{
     const touchEndTime = Date.now();
     const timeTaken = touchEndTime - touchStartTime;
     console.log('timeTaken::'+timeTaken);
-    console.log('e.target::'+e.target);
+    console.log('e.target::'+e.target.tagName);
     // if (timeTaken < 250) {
       e.target.click() 
     // }
