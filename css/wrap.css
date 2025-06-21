@@ -20,15 +20,31 @@ body {
 /*     height:100%; */
     height: var(--app-height);
 }
-.container:nth-child(1){background-color: green;}
+/* .container:nth-child(1){background-color: green;} */
 .container:nth-child(2){background-color: orange;}
 .container:nth-child(3){background-color: yellow;}
 .container:nth-child(4){background-color: red;}
-
-.page_1{
-    display: flex;
-    justify-content: center;
+/* 첫 페이지 - 메인 */
+@font-face {
+  font-family: 'Amarillo';
+  src: url('./font/amarillo/Amarillo.ttf') format('truetype'); /* 폰트 파일 경로 및 형식 지정 */
 }
+.page_1{
+    background-image: url('../image/main2.jpg');
+    background-size: cover;
+    background-position-x:50%;
+    flex-grow: 1;
+}
+#page_1_0 {
+    height: -webkit-fill-available;
+    width: 100%;
+}
+#title {
+    font-family: 'Amarillo';
+    font-size: xx-large;
+    color: #FFF;
+}
+
 details {
     margin: 5px 0 10px;
 }
@@ -58,6 +74,34 @@ details[open] > summary::-webkit-details-marker {
 }
 details[open] > summary {
     background: pink;
+}
+.hd {
+    visibility: hidden;
+}
+/* 장소 및 시간 안내 (간략) */
+#content{
+    height: -webkit-fill-available;
+    color: #FFF;
+    display:flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+/* 정렬 */
+.flex-scc {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+}
+/* 텍스트 효과 */
+.txt-shd {
+    text-shadow: 9px 5px 4px black;
+}
+/* 필터 */
+.backdrop-b2-b5{
+    backdrop-filter: blur(2px) brightness(0.5);
 }
 
 @media only screen and (max-width: 700px) {

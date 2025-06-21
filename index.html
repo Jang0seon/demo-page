@@ -9,36 +9,40 @@
   <link rel="stylesheet" href="css/wrap.css">
 </head>
 <body>
-<!--         <header id="header">
-            <div class="container"><h1>안녕하세요! 🐿️</h1></div>
-        </header> -->
-<!--         <nav id="nav">
-            <div class="container"></div>
-        </nav> -->
-<!--         <main id="main"> -->
-            <div class="wrap">
-                <div class="container page_1">
-                    <details>
-                        <summary>클릭</summary>
-                        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf9j-XH6aVXboQBKsNuQaXTpzGXvLPeW2Hm1BmNHtQ4zn9wTQ/viewform?embedded=true" 
-                         frameborder="0" marginheight="0" marginwidth="0" >로드 중…</iframe>
-                    </details>
+    <div class="wrap">
+        <div class="container page_1">
+            <div id="page_1_0" class="flex-scc">
+                <div id="title">
+                    <p class="txt-shd"> Wedding </p>
                 </div>
-                <div class="container page_2">
-                    	
-                </div>
-                <div class="container page_3">
-                    
-                </div>
-                <div class="container page_4">
-                  
+                <details id="attend">
+                    <summary> 참석 여부 </summary>
+                    <iframe id="gooframe" src="https://docs.google.com/forms/d/e/1FAIpQLSf9j-XH6aVXboQBKsNuQaXTpzGXvLPeW2Hm1BmNHtQ4zn9wTQ/viewform?embedded=true" 
+                        frameborder="0" marginheight="0" marginwidth="0" >로드 중…</iframe>
+                </details>
+                <div id="content" class="flex-scc">
+                    <p class="txt-shd">영암 라한 호텔</p>
+                    <p class="txt-shd">2025년 12월 06일 (토)</p>
                 </div>
             </div>
-<!--         </main> -->
-<!--         <footer id="footer">
-            <div class="container"></div>
-            <script src="js/script.js"></script>
-        </footer> -->
-        <script src="js/script.js"></script>
+        </div>
+        <div class="container page_2">
+                
+        </div>
+        <div class="container page_3">
+            
+        </div>
+        <div class="container page_4">
+            
+        </div>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
+
+<!-- 
+$("iframe").one("click", function () {
+    $("iframe").contentDocument
+} -->

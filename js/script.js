@@ -55,26 +55,26 @@ window.addEventListener("DOMContentLoaded", function (ev) {
   document.documentElement.style.setProperty("--app-height",`${innerHeight}px`);
 });
 
-// const wrap = document.getElementsByClassName('wrap')[0]; // 보일 영역
-// const container = document.getElementsByClassName('container');
-// let page = 0; // 영역 포지션 초기값
-// const lastPage = container.length - 1; // 마지막 페이지
+const wrap = document.getElementsByClassName('wrap')[0]; // 보일 영역
+const container = document.getElementsByClassName('container');
+let page = 0; // 영역 포지션 초기값
+const lastPage = container.length - 1; // 마지막 페이지
 
-// document.addEventListener('wheel',(e)=>{
-//     e.preventDefault();
-//     if(e.deltaY > 0){
-//         page++;
-//     }else if(e.deltaY < 0){
-//         page--;
-//     }
-//     if(page < 0){
-//         page=0;
-//     }else if(page > lastPage){
-//         page = lastPage;
-//     }
-//     console.log(e.deltaY)
-//     wrap.style.top = page * -100 + '%';
-// },{passive:false}); // 디폴트 기능 제거 - 스크롤
+document.addEventListener('wheel',(e)=>{
+    e.preventDefault();
+    if(e.deltaY > 0){
+        page++;
+    }else if(e.deltaY < 0){
+        page--;
+    }
+    if(page < 0){
+        page=0;
+    }else if(page > lastPage){
+        page = lastPage;
+    }
+    console.log(e.deltaY)
+    wrap.style.top = page * -100 + '%';
+},{passive:false}); // 디폴트 기능 제거 - 스크롤
 
 // let touchstartY = 0;
 
@@ -118,4 +118,50 @@ window.addEventListener("DOMContentLoaded", function (ev) {
 //   }
 // },{passive:false}); // 디폴트 기능 제거 - 스크롤
 
+$("#attend").click(function(){
+  let page_1_0_classList = document.getElementById("page_1_0").classList;
+  // page_1_0_classList.forEach(element => {
+  //   if(element.contains('backdrop-b2-b5-scc')){
+  //     $("#page_1_0").removeClass('backdrop-b2-b5');
+  //     $("#content").removeClass('hd');
+  //   }else{
+  //     $("#page_1_0").addClass('backdrop-b2-b5');
+  //     $("#content").addClass('hd');
+  //   }
+  // });
+  console.log(page_1_0_classList.contains('backdrop-b2-b5'))
+  if(page_1_0_classList.contains('backdrop-b2-b5')){
+    $("#page_1_0").removeClass('backdrop-b2-b5');
+    $("#content").removeClass('hd');
+  }else{
+    $("#page_1_0").addClass('backdrop-b2-b5');
+    $("#content").addClass('hd');
+  }
+});
+// document.querySelector("iframe").addEventListener("load", function(){
+//   let iframe = document.querySelector("iframe");
+//   console.log(iframe.contentDocument.getElementsByClassName("KA8vlc").item(0))
+//   // iframe.contentDocument().getElementsByClassName(KA8vlc).item(0).remove();
+// });
+// $("iframe").one("load", function() {
+//   $("iframe").contents().find(".KA8vlc").remove();
+// })
 
+// document.getElementById("attend").addEventListener('click', function(){
+//   console.log(document.getElementsByTagName("iframe").item(0));
+//   console.log(document.getElementsByTagName("iframe").item(0).get);
+//   for(let i = 0 ; i < 4; i++){
+//     console.log('document.getElementsByClassName("KA8vlc").item(0)::'
+//       +document.getElemesntByClassName("KA8vlc").item(0));
+// });
+  
+//   document.getElementsByClassName("KA8vlc").item(0).remove(); // 이메일 비공개
+//   document.getElementsByClassName("zAVwcb").item(0).remove(); // 하단 구분선
+//   document.getElementsByClassName("md0UAd").item(0).remove(); // 필수 표시
+//   document.getElementsByClassName("UpwdYb").item(0).remove(); // 네이트워크 상태
+// });
+
+
+
+
+//1FAIpQLSf9j-XH6aVXboQBKsNuQaXTpzGXvLPeW2Hm1BmNHtQ4zn9wTQ
