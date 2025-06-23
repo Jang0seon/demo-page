@@ -129,12 +129,12 @@ $("#attend").click(function(){
   //     $("#content").addClass('hd');
   //   }
   // });
-  console.log(page_1_0_classList.contains('backdrop-b2-b5'))
-  if(page_1_0_classList.contains('backdrop-b2-b5')){
-    $("#page_1_0").removeClass('backdrop-b2-b5');
+  console.log(page_1_0_classList.contains('backdrop_b2_b5'))
+  if(page_1_0_classList.contains('backdrop_b2_b5')){
+    $("#page_1_0").removeClass('backdrop_b2_b5');
     $("#content").removeClass('hd');
   }else{
-    $("#page_1_0").addClass('backdrop-b2-b5');
+    $("#page_1_0").addClass('backdrop_b2_b5');
     $("#content").addClass('hd');
   }
 });
@@ -165,3 +165,40 @@ $("#attend").click(function(){
 
 
 //1FAIpQLSf9j-XH6aVXboQBKsNuQaXTpzGXvLPeW2Hm1BmNHtQ4zn9wTQ
+window.onload = function() {
+  const kindWrap =  document.querySelector('.kind_wrap');
+  const slider = kindWrap.querySelector('.slider');
+  const slideLis = slider.querySelectorAll('li')
+  const moveButton = kindWrap.querySelector('.arrow');
+
+  /* ul 넓이 계산해 주기 */
+  const liWidth = document.querySelector('.kind_wrap').clientWidth;
+  const sliderWidth = liWidth * slideLis.length;
+  slider.style.width = `${sliderWidth}px` ;
+  slideLis.forEach(e=>{
+    e.querySelector('img').style.width = `${liWidth}px`;
+  });
+
+  /* 리스너 설치하기 */
+  let currentIdx = 0; // 슬라이드 현재 번호
+  let translate = 0; // 슬라이드 위치 값
+  moveButton.addEventListener('click', moveSlide);
+
+  function moveSlide(event) {
+    event.preventDefault();
+    if (event.target.className === 'next') {
+      if (currentIdx !== slideLis.length -1) {
+        translate -= liWidth;
+        slider.style.transform = `translateX(${translate}px)`;
+        currentIdx += 1;
+      }
+    } else if (event.target.className === 'prev') {
+        if (currentIdx !== 0) {
+          translate += liWidth;
+          slider.style.transform = `translateX(${translate}px)`;
+          currentIdx -= 1;
+        }
+      }
+  }
+
+}
