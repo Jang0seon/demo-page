@@ -215,10 +215,10 @@ window.onload = function() {
 // };
 
 function copyText(id) {
-  const txt = document.getElementById(id);
+  const txt = document.getElementById(id).textContent;
    // clipboard API 사용
-   if (navigator.clipboard !== undefined) {
-     navigator.clipboard
+   if (window.navigator.clipboard !== undefined) {
+     window.navigator.clipboard
        .writeText(txt)
        .then(() => {
          alert('텍스트가 복사되었습니다.');
