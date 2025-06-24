@@ -203,13 +203,40 @@ window.onload = function() {
 
 }
 
-const myDiv = document.getElementById("myDiv");
+// const myDiv = document.getElementById("myDiv");
 
-    // button 클릭 이벤트
-    document.getElementById("myButton").onclick = () => {
-      // div의 내용(textContent)을 복사한다.
-      window.navigator.clipboard.writeText(myDiv.textContent).then(() => {
-        // 복사가 완료되면 호출된다.
-        alert("복사완료");
-      });
-    };
+// // button 클릭 이벤트
+// document.getElementById("myButton").onclick = () => {
+//   // div의 내용(textContent)을 복사한다.
+//   window.navigator.clipboard.writeText(myDiv.textContent).then(() => {
+//     // 복사가 완료되면 호출된다.
+//     alert("복사완료");
+//   });
+// };
+
+function copyText(id) {
+  const txt = document.getElementById(id);
+   // clipboard API 사용
+   if (navigator.clipboard !== undefined) {
+     navigator.clipboard
+       .writeText(txt)
+       .then(() => {
+         alert('텍스트가 복사되었습니다.');
+       });
+   } else {
+     // execCommand 사용
+     const textArea = document.createElement('textarea');
+     textArea.value = txt;
+     document.body.appendChild(textArea);
+     textArea.select();
+     textArea.setSelectionRange(0, 99999);
+     try {
+       document.execCommand('copy');
+     } catch (err) {
+       console.error('복사 실패', err);
+     }
+     textArea.setSelectionRange(0, 0);
+     document.body.removeChild(textArea);
+     alert('텍스트가 복사되었습니다.');
+   }
+ };
