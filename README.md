@@ -1,2 +1,2 @@
 # demo-page
-I will use it to my wedding page.
+Jang0seon.github.io/demo-page
