@@ -11,22 +11,107 @@
 <body>
     <div class="wrap">
         <div class="container page_1">
-            <div id="div1">div1의 내용입니다.</div>
-            <button id="btn1" onClick="copyText('div1')">복사</button>
-            <div id="div2">div2의 내용입니다.</div>
-            <button id="btn2" onClick="copyText('div2')">복사</button>
-            <div id="div3">div3의 내용입니다.</div>
-            <button id="btn3" onClick="copyText('div3')">복사</button>
+            <div id="page_1_0" class="flex_scc">
+                <div id="title" class="pt10">
+                    <p class="txt_shd"> Wedding </p>
+                </div>
+                <details id="attend">
+                    <summary> 참석 여부 </summary>
+                    <iframe id="gooframe" src="https://docs.google.com/forms/d/e/1FAIpQLSf9j-XH6aVXboQBKsNuQaXTpzGXvLPeW2Hm1BmNHtQ4zn9wTQ/viewform?embedded=true" 
+                        frameborder="0" marginheight="0" marginwidth="0" >로드 중…</iframe>
+                </details>
+                <div id="content" class="flex_scc">
+                    <p class="txt_shd">영암 라한 호텔</p>
+                    <p class="txt_shd">2025년 12월 06일 (토)</p>
+                </div>
+            </div>
         </div>
         <div class="container page_2 flex_ccc">
-              
+            <div id="page_2_0" class="flex_scc">
+                <hr id="invit_title" data-content="드리는 말씀"/>
+                <p id="invit" class="txt_center line_h mb5">
+                    서로가 마주보며 다져온 사랑을<br/>
+                    이제 함께 한곳을 바라보며<br/>
+                    걸아갈 수 있는 큰 사랑으로<br/>
+                    키우고자 합니다.<br/>
+                    저희 두 사람이 사랑의 이름으로<br/>
+                    지켜나갈 수 있도록<br/>
+                    앞날을 축복해주시면 감사하겠습니다.<br/>
+                </p>
+               <hr class="bar"/>
+                <p class="mb5">
+                    <p>000ㆍ000의 장남 길동</p>
+                    <p>000ㆍ000의 장녀 길순</p>
+                </p>
+            </div>    
         </div>
         <div class="container page_3 ">
-            
+            <div id="gallery_title" class="pt10">
+                <p class="txt_shd fnt1" > Wedding gallery</p>
+            </div>
+            <div class="kind_wrap">
+                <div class="kind_slider">
+                    <ul class="slider">
+                        <li><img src="./image/slider_01.jpg" alt=""></li>
+                        <li><img src="./image/slider_02.jpg" alt=""></li>
+                        <li><img src="./image/slider_03.jpg" alt=""></li>
+                        <li><img src="./image/slider_04.jpg" alt=""></li>
+                        <li><img src="./image/slider_05.jpg" alt=""></li>
+                    </ul>
+                </div>
+                <div class="arrow">
+                    <a href="" class="prev">이전</a>
+                    <a href="" class="next">다음</a>
+                </div>
             </div>
         </div>
         <div class="container page_4">
-            <h2> 지도 API </h2>
+            <div id="title">
+                <h2> 오시는 길 </h2>
+            </div>
+            
+            <div id="naver_map"></div>
+            <div id="kakao_map"></div>
+            <h3> 셔틀 버스 안내</h3>
+            <div id="bus"></div>
+            <h3> 주차 안내</h3>
+        </div>
+        <div class="container page_5">
+            <div id="title">
+                마음 전하기
+            </div>
+            <div id="num" class="p5">
+                <details id="hs">
+                <summary>신랑측</summary>
+                    <div>
+                        <span>신랑측</span> | <span id="acount001">000-0000-0000-00</span>
+                        <button id="btn1" onClick="copyText('acount001')">복사</button>
+                    </div>
+                    <div>
+                        <span>아버지</span> | <span id="acount002">000-0000-0000-01</span>
+                        <button id="btn1" onClick="copyText('acount002')">복사</button>
+                    </div>
+                    <div>
+                        <span>어머니</span> | <span id="acount003">000-0000-0000-02</span>
+                        <button id="btn1" onClick="copyText('acount003')">복사</button>
+                    </div>
+                </details>
+                <details id="wf">
+                <summary>신부측</summary>
+                    <div>
+                        <span>신랑측</span> | <span id="acount011">000-0000-0000-10</span>
+                        <button id="btn1" onClick="copyText('acount011')">복사</button>
+                    </div>
+                    <div>
+                        <span>아버지</span> | <span id="acount012">000-0000-0000-11</span>
+                        <button id="btn1" onClick="copyText('acount012')">복사</button>
+                    </div>
+                    <div>
+                        <span>어머니</span> | <span id="acount013">000-0000-0000-12</span>
+                        <button id="btn1" onClick="copyText('acount013')">복사</button>
+                    </div>
+                </details>
+            </div>
         </div>
     </div>
     

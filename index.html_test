@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐿️</title>
+<!--     <link rel="stylesheet" href="css/style.css"> -->
+  <link rel="stylesheet" href="css/wrap.css">
+</head>
+<body>
+    <div class="wrap">
+        <div class="container page_1">
+            <div id="div1">div1의 내용입니다.</div>
+            <button id="btn1" onClick="copyText('div1')">복사</button>
+            <div id="div2">div2의 내용입니다.</div>
+            <button id="btn2" onClick="copyText('div2')">복사</button>
+            <div id="div3">div3의 내용입니다.</div>
+            <button id="btn3" onClick="copyText('div3')">복사</button>
+        </div>
+        <div class="container page_2 flex_ccc">
+              
+        </div>
+        <div class="container page_3 ">
+            
+            </div>
+        </div>
+        <div class="container page_4">
+            <h2> 지도 API </h2>
+        </div>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
+
+<!-- 
+$("iframe").one("click", function () {
+    $("iframe").contentDocument
+} -->

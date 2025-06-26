@@ -6,6 +6,7 @@ body {
     margin:0;
     border:0;
     padding:0;
+    background-color: #d9d3b3;
 }
 p {
     margin-block-start: 0em;
@@ -25,8 +26,8 @@ p {
 }
 /* .container:nth-child(1){background-color: green;} */
 /* .container:nth-child(2){background-color: orange;} */
-.container:nth-child(3){background-color: yellow;}
-.container:nth-child(4){background-color: red;}
+/* .container:nth-child(3){background-color: yellow;} */
+/* .container:nth-child(4){background-color: red;} */
 /*********************************************************** 첫번째 페이지 */
 .page_1{
     background-image: url('../image/main2.jpg');
@@ -89,8 +90,8 @@ details[open] > summary {
 }
 /*********************************************************** 두번째 페이지 */
 #page_2_0 {
-    width: 90%;
-    height: 70%;
+    width: 80%;
+    height: 80%;
     background-image:url('../image/background_2.jpg');
     border-radius: 30px;
     box-shadow: 3px 6px 7px -5px;
@@ -131,6 +132,10 @@ details[open] > summary {
 
 }
 /*********************************************************** 세번째 페이지 */
+#gallery_title{
+    display: flex;
+    justify-content: center;
+}
 li {
   list-style: none;
 }
@@ -140,6 +145,7 @@ li {
   max-width:800px; 
   margin:0 auto; 
   position: relative;
+  background-color: black;
 }
 .kind_wrap > .kind_slider {
   overflow: hidden;
@@ -160,14 +166,26 @@ li {
   object-fit: contain;
 }
 .kind_wrap .arrow > a.prev {
-  position: absolute; 
-  left:-50px; 
-  top:100px;
+  position: absolute;
+  left: -10%;
+  top: 50%;
+  height: 60px;
+  width: 60px;
+  background-size: cover;
+  background-image: url('../image/icon_001.png');
+  transform: rotate(180deg);
+  font-size: 0;
 }
 .kind_wrap .arrow > a.next {
-  position: absolute; 
-  right:-50px; 
-  top:100px;
+  position: absolute;
+  right: -10%;
+  top: 50%;
+  height: 60px;
+  width: 60px;
+  background-size: cover;
+  background-image: url('../image/icon_001.png');
+  transform: rotate(0deg);
+  font-size: 0;
 }
 /* .divider
 {
@@ -243,6 +261,9 @@ li {
 .pb5{
     padding-bottom: 5%;
 }
+.pt10{
+    padding-top: 10%;
+}
 /* 폰트 */
 @font-face {
   font-family: 'Amarillo';
@@ -253,7 +274,13 @@ li {
     font-size: xx-large;
     color: #FFF;
 }
-
+/*color*/
+.bl{
+    background-color: #808ac0;
+}
+.pk{
+    background-color: #c0808a;
+}
 /*********************************************************** 미디어 쿼리 */
 @media only screen and (max-width: 700px) {
   iframe {
