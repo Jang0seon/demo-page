@@ -32,4 +32,8 @@ function like() {
     updateLikeCount();
 }
 
+function like01() {
+    console.log('like01');
+}
+
 updateLikeCount(); // 초기 좋아요 수 가져오기
