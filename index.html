@@ -11,6 +11,43 @@
     <script src="https://www.gstatic.com/firebasejs/11.9.1/firebase-analytics.js"></script>
 </head>
 <body>
+    <script>
+        import firebase from "firebase/app";
+        import { getAnalytics } from 'firebase/analytics';
+        
+        const firebaseConfig = {
+        apiKey: "AIzaSyDfYJRdcK97ZuqglKaVTR1eN8b-8Jdv1q4",
+            authDomain: "tokyo-micron-463601-p8.firebaseapp.com",
+            projectId: "tokyo-micron-463601-p8",
+            storageBucket: "tokyo-micron-463601-p8.firebasestorage.app",
+            messagingSenderId: "240808159243",
+            appId: "1:240808159243:web:df3412577264a620a6ff0e",
+            measurementId: "G-YLG46GVZN8"
+        };
+
+        export default firebase.initializeApp(firebaseConfig);
+        const app = firebase.initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const db = firebase.firestore()
+        const likeRef = db.collection("likes").doc("main");
+
+        function updateLikeCount() {
+        likeRef.get().then(doc => {
+            if (doc.exists) {
+            document.getElementById("like-count").textContent = doc.data().count;
+            } else {
+            likeRef.set({ count: 0 });
+            }
+        });
+        }
+
+        function like() {
+        likeRef.update({ count: firebase.firestore.FieldValue.increment(1) });
+        updateLikeCount();
+        }
+
+        updateLikeCount(); // 초기 좋아요 수 가져오기
+    </script>
     <div class="wrap">
         <div class="container page_1">
             <div id="page_1_0" class="flex_scc">
@@ -31,43 +68,6 @@
                     <p class="txt_shd">2025년 12월 06일 (토)</p>
                 </div>
             </div>
-            <script>
-                import firebase from "firebase/app";
-                import { getAnalytics } from 'firebase/analytics';
-                
-                const firebaseConfig = {
-                apiKey: "AIzaSyDfYJRdcK97ZuqglKaVTR1eN8b-8Jdv1q4",
-                    authDomain: "tokyo-micron-463601-p8.firebaseapp.com",
-                    projectId: "tokyo-micron-463601-p8",
-                    storageBucket: "tokyo-micron-463601-p8.firebasestorage.app",
-                    messagingSenderId: "240808159243",
-                    appId: "1:240808159243:web:df3412577264a620a6ff0e",
-                    measurementId: "G-YLG46GVZN8"
-                };
-
-                export default firebase.initializeApp(firebaseConfig);
-                const analytics = getAnalytics(app);
-                const app = firebase.initializeApp(firebaseConfig);
-                const db = firebase.firestore()
-                const likeRef = db.collection("likes").doc("main");
-
-                function updateLikeCount() {
-                likeRef.get().then(doc => {
-                    if (doc.exists) {
-                    document.getElementById("like-count").textContent = doc.data().count;
-                    } else {
-                    likeRef.set({ count: 0 });
-                    }
-                });
-                }
-
-                function like() {
-                likeRef.update({ count: firebase.firestore.FieldValue.increment(1) });
-                updateLikeCount();
-                }
-
-                updateLikeCount(); // 초기 좋아요 수 가져오기
-            </script>
         </div>
         <div class="container page_2 flex_ccc">
             <div id="page_2_0" class="flex_scc">
