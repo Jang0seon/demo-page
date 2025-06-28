@@ -17,7 +17,7 @@ const analytics = getAnalytics(app);
 const db = firebase.firestore()
 const likeRef = db.collection("likes").doc("main");
 
-function updateLikeCount() {
+export function updateLikeCount() {
 likeRef.get().then(doc => {
     if (doc.exists) {
     document.getElementById("like-count").textContent = doc.data().count;
@@ -27,12 +27,12 @@ likeRef.get().then(doc => {
 });
 }
 
-function like() {
+export function like() {
     likeRef.update({ count: firebase.firestore.FieldValue.increment(1) });
     updateLikeCount();
 }
 
-function like01() {
+export function like01() {
     console.log('like01');
 }
 
