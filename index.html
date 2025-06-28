@@ -12,21 +12,21 @@
 </head>
 <body>
     <script>
+    import { initializeApp } from "firebase/app";
+    import { getAnalytics } from "firebase/analytics";
+    
     const firebaseConfig = {
       apiKey: "AIzaSyDfYJRdcK97ZuqglKaVTR1eN8b-8Jdv1q4",
-    authDomain: "tokyo-micron-463601-p8.firebaseapp.com",
-    projectId: "tokyo-micron-463601-p8",
-    storageBucket: "tokyo-micron-463601-p8.firebasestorage.app",
-    messagingSenderId: "240808159243",
-    appId: "1:240808159243:web:df3412577264a620a6ff0e",
-    measurementId: "G-YLG46GVZN8"
+        authDomain: "tokyo-micron-463601-p8.firebaseapp.com",
+        projectId: "tokyo-micron-463601-p8",
+        storageBucket: "tokyo-micron-463601-p8.firebasestorage.app",
+        messagingSenderId: "240808159243",
+        appId: "1:240808159243:web:df3412577264a620a6ff0e",
+        measurementId: "G-YLG46GVZN8"
     };
 
-    firebase.initializeApp(firebaseConfig);
-    const db = firebase.firestore();
-    db.collection("test").add({ text: "Hello Firebase!" })
-      .then((docRef) => console.log("저장 성공!", docRef.id))
-      .catch((err) => console.error("오류", err));
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
   </script>
 
     <div class="wrap">
