@@ -12,7 +12,7 @@
 </head>
 <body>
     <script>
-    import { initializeApp } from 'firebase/app';
+    import firebase from "firebase/app";
     import { getAnalytics } from 'firebase/analytics';
     
     const firebaseConfig = {
@@ -25,7 +25,7 @@
         measurementId: "G-YLG46GVZN8"
     };
 
-    const app = initializeApp(firebaseConfig);
+    export default firebase.initializeApp(firebaseConfig);
     const analytics = getAnalytics(app);
   </script>
 
