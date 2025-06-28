@@ -2,7 +2,7 @@ import firebase from 'firebase/compat/app';
 import { getAnalytics } from 'firebase/analytics';
 
 const firebaseConfig = {
-apiKey: "AIzaSyDfYJRdcK97ZuqglKaVTR1eN8b-8Jdv1q4",
+    apiKey: "AIzaSyDfYJRdcK97ZuqglKaVTR1eN8b-8Jdv1q4",
     authDomain: "tokyo-micron-463601-p8.firebaseapp.com",
     projectId: "tokyo-micron-463601-p8",
     storageBucket: "tokyo-micron-463601-p8.firebasestorage.app",
@@ -28,8 +28,8 @@ likeRef.get().then(doc => {
 }
 
 function like() {
-likeRef.update({ count: firebase.firestore.FieldValue.increment(1) });
-updateLikeCount();
+    likeRef.update({ count: firebase.firestore.FieldValue.increment(1) });
+    updateLikeCount();
 }
 
 updateLikeCount(); // 초기 좋아요 수 가져오기
