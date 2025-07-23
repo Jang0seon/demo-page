@@ -1,6 +1,8 @@
 // import { initializeApp } from "firebase/app";
 // import { } from "firebase/auth"
 // import { getFirestore, collection, getDocs, getDoc } from "firebase/firestore";
+import { getFirestore, collection, getDocs, getDoc } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
 
 const firebaseApp = initializeApp({
   apiKey: "AIzaSyDfYJRdcK97ZuqglKaVTR1eN8b-8Jdv1q4",
