@@ -1,7 +1,7 @@
 // import { initializeApp } from "firebase/app";
 // import { } from "firebase/auth"
 // import { getFirestore, collection, getDocs, getDoc } from "firebase/firestore";
-import { getFirestore, collection, getDocs, getDoc } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+import { getFirestore, collection, getDocs, getDoc, doc, onSnapshot } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
 
 const firebaseApp = initializeApp({
@@ -20,8 +20,7 @@ const db = getFirestore(firebaseApp);
 // querySnapshot.forEach((doc) => {
 //   console.log(`${doc.id} => ${doc.data()}`);
 // });
-db.collection("likes").doc("likes")
-    .onSnapshot((doc) => {
-        console.log("Current data: ", doc.data());
-    });
+const unsub = onSnapshot(doc(db, "likes", "likes"), (doc) => {
+    console.log("Current data: ", doc.data());
+});
 
