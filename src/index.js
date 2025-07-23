@@ -1,7 +1,7 @@
 // import { initializeApp } from "firebase/app";
 // import { } from "firebase/auth"
 // import { getFirestore, collection, getDocs, getDoc } from "firebase/firestore";
-import { getFirestore, collection, getDocs, getDoc } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore";
+import { getFirestore, collection, getDocs, getDoc } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
 
 const firebaseApp = initializeApp({
