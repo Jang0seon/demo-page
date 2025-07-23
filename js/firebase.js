@@ -72,6 +72,27 @@ const app = initializeApp(firebaseConfig);
 
 // Firestore 인스턴스 가져오기
 const db = getFirestore(app);
+const likeRef = db.collection("likes").doc("main");
 
-export { db }; // 다른 파일에서 Firestore 인스턴스를 사용할 수 있도록 내보내기
+console.log('likes :: ' + likeRef );
+
+// 👍 좋아요 추가
+export function like() {
+  likeRef.update({
+    count: firebase.firestore.FieldValue.increment(1),
+  });
+  updateLikeCount();
+}
+
+// ✅ 좋아요 수 가져오기
+export function updateLikeCount() {
+  likeRef.get().then(doc => {
+    if (doc.exists) {
+      document.getElementById("like-count").textContent = doc.data().count;
+    } else {
+      likeRef.set({ count: 0 });
+    }
+  });
+}
+// export { db }; // 다른 파일에서 Firestore 인스턴스를 사용할 수 있도록 내보내기
 
