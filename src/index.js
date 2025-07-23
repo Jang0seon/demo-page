@@ -16,9 +16,12 @@ const firebaseApp = initializeApp({
 });
 const db = getFirestore(firebaseApp);
 // db.collection('likes').getDocs();
-const querySnapshot = await getDocs(collection(db, "likes"));
-querySnapshot.forEach((doc) => {
-  console.log(`${doc.id} => ${doc.data()}`);
-});
-
+// const querySnapshot = await getDocs(collection(db, "likes"));
+// querySnapshot.forEach((doc) => {
+//   console.log(`${doc.id} => ${doc.data()}`);
+// });
+db.collection("likes").doc("likes")
+    .onSnapshot((doc) => {
+        console.log("Current data: ", doc.data());
+    });
 
