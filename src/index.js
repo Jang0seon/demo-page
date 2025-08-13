@@ -21,6 +21,6 @@ const db = getFirestore(firebaseApp);
 //   console.log(`${doc.id} => ${doc.data()}`);
 // });
 const unsub = onSnapshot(doc(db, "likes", "likes"), (doc) => {
-    console.log("Current data: ", doc.data());
+    console.log("Current data: ", doc.data().);
 });
 
